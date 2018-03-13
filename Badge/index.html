@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+  <title>Badge Generator</title>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf8'/>
+  <meta name='apple-mobile-web-app-capable' content='yes'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+
+  <div class="container">  
+  <div class="jumbotron text-center"><h2>Badge Generator</h2></div>
+   <form action="template.html"> 
+
+    <div class="row">
+      <div class="col-md-4"><h3 class="text-center">Evenimentul desfasurat</h3></div>
+      <div class="col-md-4"><h3 class="text-center">Rolul persoanei</h3></div>
+      <div class="col-md-4"><h3 class="text-center">Culoare</h3></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <select name="Eveniment" size="1" class="form-control">
+                <option value="conferinte">Conferinte</option>
+                <option value="ateliere de lucru">Ateliere de lucru</option>
+                <option value="acces in cadrul unui obiectiv turistic">Acces in cadrul unui obiectiv turistic</option>
+                <option value="semnalarea apartenentei la o organizatie">Apartenentei la o organizatie</option>
+                <option value="grup de interes">Grup de interes</option>
+                <option value="diverse">Diverse</option>
+              </select>
+        </div>
+        <div class="col-md-4 text-center">
+            <select name="Rolul" size="1" class="form-control">
+                <option value="vizitator">Vizitator</option>
+                <option value="stagiar">Stagiar</option>
+                <option value="personal administrativ">Personal administrativ</option>
+                <option value="participant">Participant</option>
+                <option value="invitat special">Invitat special</option>
+                <option value="profesor">Profesor</option>
+                <option value="student">Student</option>
+                <option value="diverse">Diverse</option>
+              </select>
+        </div>
+        <div class="col-md-4 text-center">
+            <input type="color" value="#ff0000">
+        </div>
+      </div>
+
+    <div class="text-center"><h3>Template badge</h3></div>
+
+    <div class="row">
+      <div class="col-md-4 text-center">
+          <label>
+              <input type="radio" name="varianta" value="1" /> Varianta 1<br>
+              <img src="image/temp01.jpg">
+          </label> 
+      </div>
+      <div class="col-md-4 text-center">
+          <label>
+              <input type="radio" name="varianta" value="2" /> Varianta 2<br>
+              <img src="image/temp02.jpg">
+          </label> 
+      </div>
+      <div class="col-md-4 text-center">
+          <label>
+              <input type="radio" name="varianta" value="3" /> Varianta 3<br>
+              <img src="image/temp03.jpg">
+          </label> 
+      </div>
+
+    </div>
+
+    <!-- <label>
+        <input type="radio" name="macheta" value="tip1" />
+        <img src="image/macheta01.png">
+        <input type="radio" name="macheta" value="tip2" />
+        <img src="image/macheta02.png">
+        <input type="radio" name="macheta" value="tip3" />
+        <img src="image/macheta03.png">
+        <input type="radio" name="macheta" value="tip4" />
+        <img src="image/macheta04.png">
+      </label>
+      <br> -->    
+   
+    <br>
+    <div class="text-center">
+      <input type="submit" value="Sablon" class="btn btn-primary">
+    </div>
+
+  </form>
+
+  </div>
+  
+</body>
+</html>
+
+
