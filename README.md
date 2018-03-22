@@ -1,1 +1,0 @@
-# generator-de-ecusoane
