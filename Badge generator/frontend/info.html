@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Badge generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body  >
+
+<div id="home" >
+
+
+</div>
+</div>
+
+
+<div class="box">
+    <div class="row" >
+        <br>
+        <div class="container" >
+            <a class="column" title="home" href="home.html" >Home</a>
+            <a class="column" title="generator" href="templates.html">Badge generator</a>
+            <a class="column" title="about" href="about.html">About</a>
+        </div>
+    </div>
+    <br>
+</div>
+
+
+<hr>
+<!-- START 	-->
+
+<div class="box" style="padding: 2%">
+
+    <h2 style="text-align: left">Insert data:    </h2>
+    <div class="container" style="text-align: left">
+        <form action="../backend/generate.php">
+
+            <label >Name:   </label><br>
+            <input type="text" id="lname" name="Name" placeholder="your name...">
+            <br>
+            <label >Affiliation: </label><br>
+            <input type="text" id="lname" name="Affiliation" placeholder="affiliation...">
+            <br>
+            <label >Role:  </label><br>
+            <input type="text" id="lname" name="Role" placeholder="your role...">
+            <br>
+            <br>
+
+            <input type="submit" value="Next">
+        </form>
+
+        <h2 style="text-align: left"> Or upload a file(cvs or xml):</h2>
+
+        <form action="../backend/upload.php" method="post" enctype="multipart/form-data">
+            Select a file to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload file" name="submit">
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<br>
+<br>
+
+
+
+
+
+
+</div>
+
+
+
+
+<div style=";padding:15px;">
+
+
+    <div class="bottom">
+        <p ><i>© Popa Albert, Dulan Dragos & Alexa Geo</i></p>
+    </div>
+
+    <div class="bottom">
+        <a id="goTop" href="#top"  >Go to top </a>
+
+    </div>
+
+
+</div >
+
+</body>
+</html>
+
+
