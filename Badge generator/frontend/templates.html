@@ -11,11 +11,6 @@
 </head>
 <body  >
 
-<div id="home" >
-
-
-    </div>
-</div>
 
 
 <div class="box">
@@ -23,7 +18,7 @@
         <br>
         <div class="container" >
             <a class="column" title="home" href="home.html" >Home</a>
-            <a class="column" title="generator" href="templates.html">Badge generator</a>
+            <a class="column" title="generator" href="choose.html">Badge generator</a>
             <a class="column" title="about" href="about.html">About</a>
         </div>
     </div>
@@ -35,68 +30,102 @@
 <!-- START 	-->
 
 <div class="box">
-    <h2>Select a template:</h2>
     <br>
-    <form  action="info.html">
+    <h1 style="text-align: left; padding-left: 15%">Select a template:</h1>
+    <br>
+    <form  action="../backend/info.php" method="post">
     <div  class="template-containter" >
                 <div style="padding: 4%;">
-                <label>
-                    <input type="radio" name="varanta" value="1" /> Template 1<br>
+                <label >
+                    <input type="radio" name="template" value="1" /> Template 1<br>
                     <img class="myImg"  title="click to select"  src="../image/temp01.jpg">
                 </label>
                 </div>
 
                <div style="padding: 4%">
                    <label>
-                        <input type="radio" name="varianta" value="2" /> Template 2<br>
-                        <img class="myImg"  title="click to select"  src="../image/temp01.jpg">
+                        <input type="radio" name="template" value="2" /> Template 2<br>
+                        <img class="myImg"  title="click to select"  src="../image/temp02.jpg">
                     </label>
                 </div>
 
                 <div style="padding: 4%" >
                     <label>
-                        <input type="radio" name="varianta" value="3" /> Template 3<br>
-                        <img class="myImg"  title="click to select"  src="../image/temp01.jpg">
+                        <input type="radio" name="template" value="3" /> Template 3<br>
+                        <img class="myImg"  title="click to select"  src="../image/temp03.jpg">
                     </label>
                 </div>
-
 
 
 
 
     </div>
 
+        <hr>
 
+    <div class="row" style="font-size: x-large; max-width: 80%; padding-left: 15%; padding-right: 15%">
+
+    <h2 style="text-align: left">Insert data:    </h2>
+    <div class="container" >
+
+            <div class="columnTwo">
+            <label >Name:   </label><br>
+            <input type="text"  name="name" placeholder="your name...">
+            </div>
+            <div class="columnTwo">
+            <label >Affiliation: </label><br>
+            <input type="text"  name="affiliation" placeholder="affiliation...">
+            </div>
+            <div class="columnTwo">
+            <label >Role:  </label><br>
+            <input type="text"  name="role" placeholder="your role...">
+            </div>
+                <br>
+        <br><br>
         <br>
+        <hr>
+        <h3 style="text-align: left"> Choose a color: </h3>
 
-          <div style="text-align: center">
-                <input type="submit" value="Next" >
+        <div class="columnTwo">
+            <input name="culoare" type="color"id="valoareculoare" value="ff0000">
+        </div>
+        <br><br><br>
 
 
-          </div>
+
+    </div>
+        <hr>
+        <div>
         <br>
-    </form>
+        <h2 style="text-align: left"> Upload image:</h2>
+            Select a image to upload:
+        <input type="file" name="imageToUpload" id="yourPhoto" >
+
+        <div>
+
+
+    </div>
+
+
 </div>
+        <br><br><br>
 
 
 
+        <hr><br>
+        <div style="text-align: center">
+            <input type="submit" value="Generate" >
+
+
+        </div>
+        <br>
+
+    </form>
 
 
 
-
-
-
-
-
-
-<hr>
 <br>
-<br>
-
-
-
-
-
+</div>
 
 </div>
 

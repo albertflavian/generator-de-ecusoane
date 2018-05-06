@@ -96,6 +96,17 @@ body{
   font-size:2.5vw;
   width: 32.5%;
 }
+.columnTwo {
+    color: black;
+    text-shadow: 2px 1px 3px #000000;
+    float: left;
+    width: 32.5%;
+    text-align: left;
+    margin: auto;
+}
+
+
+
 .template-containter > div{
     display: inline-flex;
     align-content: center;
@@ -147,6 +158,8 @@ a:active {
     color: white;
 }
 
+
+input,textarea{max-width:80%; max-width:block}
 
 
 </style>

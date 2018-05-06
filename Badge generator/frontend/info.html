@@ -15,7 +15,7 @@
 
 
 </div>
-</div>
+
 
 
 <div class="box">
@@ -23,7 +23,7 @@
         <br>
         <div class="container" >
             <a class="column" title="home" href="home.html" >Home</a>
-            <a class="column" title="generator" href="templates.html">Badge generator</a>
+            <a class="column" title="generator" href="choose.html">Badge generator</a>
             <a class="column" title="about" href="about.html">About</a>
         </div>
     </div>
@@ -34,25 +34,31 @@
 <hr>
 <!-- START 	-->
 
+
+
 <div class="box" style="padding: 2%">
 
     <h2 style="text-align: left">Insert data:    </h2>
     <div class="container" style="text-align: left">
-        <form action="../backend/generate.php">
 
-            <label >Name:   </label><br>
-            <input type="text" id="lname" name="Name" placeholder="your name...">
+        <form action="../backend/info.php" >
+
+           <label >Name:   </label><br>
+            <input type="text"  name="name" placeholder="your name...">
             <br>
             <label >Affiliation: </label><br>
-            <input type="text" id="lname" name="Affiliation" placeholder="affiliation...">
+            <input type="text"  name="affiliation" placeholder="affiliation...">
             <br>
             <label >Role:  </label><br>
-            <input type="text" id="lname" name="Role" placeholder="your role...">
+            <input type="text"  name="role" placeholder="your role...">
             <br>
             <br>
 
             <input type="submit" value="Next">
+
+
         </form>
+
 
         <h2 style="text-align: left"> Or upload a file(cvs or xml):</h2>
 
@@ -61,6 +67,7 @@
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload file" name="submit">
         </form>
+
     </div>
 </div>
 
