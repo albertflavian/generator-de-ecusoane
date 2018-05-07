@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,14 +12,14 @@
   <meta http-equiv='Content-Type' content='text/html; charset=utf8'/>
   <meta name='apple-mobile-web-app-capable' content='yes'/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/badge.css"> 
+  <link rel="stylesheet" href="../css/badge.css"> 
 </head>
 <body>	
 	
 	<script>
 	setTimeout(function(){  
-		window.location.replace("index.php");
-		window.location.href = "index.php";
+		window.location.replace("../frontend/templates.html");
+		window.location.href = "../frontend/templates.html";
 	}, 5000);
 	</script>
 	<h1><span>Nu ai ales nici o variantă!</span></h1>
