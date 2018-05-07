@@ -79,8 +79,9 @@
                         ctx.fillStyle = "<?php echo($culoare)?>";
                         ctx.fillRect(100, 0, 340, 180);
                         break;
-                    default:
-                        alert("Nu ai ales nici o tema !");
+
+                        default:
+                        window.location.href="eroare.php";
                 }
 
             }
@@ -92,3 +93,5 @@
 
         </body>
         </html>
+
+
