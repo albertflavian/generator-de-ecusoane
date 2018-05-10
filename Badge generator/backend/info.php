@@ -22,7 +22,11 @@
         $affiliation = $_REQUEST['affiliation'];
         $template = $_REQUEST['template'];
         $culoare = $_REQUEST['culoare'];
-        $image    =   $_REQUEST['imageToUpload'];
+        $image    = $_REQUEST['imageToUpload'];
+        $url    =   $_REQUEST['url'];
+       // $handle = fopen($_FILES["imageToUpload"]["tmp_name"], 'r');
+/*
+        echo ("<br>Color: " . $image);
 
         echo ("<br>name: " . $name);
         echo ("<br>role: " . $role);
@@ -30,6 +34,7 @@
         echo ("<br>template: " . $template);
         echo ("<br>Color: " . $culoare);
 
+*/
 
 
         ?>
@@ -37,7 +42,7 @@
             Your browser does not support the canvas element.
         </canvas>
         <div style="display:none;">
-        <img id="source" src=<?php echo("../image/" . $image)?> width="300" height="227">
+        <img id="source" src="<?php echo("../image/".$image)?>" alt="photo" height="240" width="200">
         </div>
         <br><br><br>
         <script>
@@ -59,8 +64,10 @@
                         ctx.fillText("<?php echo($affiliation)?>",140,80);
                         ctx.font = "25px Arial";
                         ctx.fillText("<?php echo($role)?>",140,110);
-                        ctx.drawImage(img, 33, 71, 104, 124, 21, 20, 87, 104);
-
+                        ctx.font = "25px Arial";
+                        ctx.fillText("<?php echo($url)?>",140,140);
+                        //ctx.drawImage(img, 33, 71, 104, 124, 21, 20, 87, 104);
+                        ctx.drawImage(img, 15, 15, 100, 100);
                         break;
                     case "2":
                         ctx.fillStyle = "<?php echo($culoare)?>";
@@ -72,12 +79,14 @@
                         ctx.fillText("<?php echo($affiliation)?>",20,90);
                         ctx.font = "20px Arial";
                         ctx.fillText("<?php echo($role)?>",20,120);
-                        ctx.drawImage(img, 33, 71, 104, 124, 221, 20, 87, 104);
-
+                        ctx.font = "25px Arial";
+                        ctx.fillText("<?php echo($url)?>",140,150);
+                        //ctx.drawImage(img, 33, 71, 104, 124, 221, 20, 87, 104);
+                        ctx.drawImage(img,210,20,104,124);
                         break;
                     case "3":
                         ctx.fillStyle = "<?php echo($culoare)?>";
-                        ctx.fillRect(100, 0, 340, 180);
+                        ctx.fillRect(100, 0, 340, 240);
                         break;
 
                         default:
@@ -86,9 +95,11 @@
 
             }
         </script>
-        <br><br><button  class="button button_green" type="button">Tipareste</button><br>
-        <button class="button button_blue" type="button" onclick="alert('Incarca fisier csv sau xml')">Adauga fisier</button>
-
+        <br><br>
+        <div style="padding-left: 100px">
+            <button  class="button button_green" type="button">Tipareste</button><br>
+        <!--    <button class="button button_blue" type="button" onclick="alert('Incarca fisier csv sau xml')">Adauga fisier</button>   -->
+        </div>
 
 
         </body>
