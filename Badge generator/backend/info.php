@@ -1,7 +1,4 @@
 
-
-
-
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -11,7 +8,6 @@
             <meta http-equiv='Content-Type' content='text/html; charset=utf8'/>
             <meta name='apple-mobile-web-app-capable' content='yes'/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="../css/badge.css">
             <!-- <link rel="stylesheet" href="../css/badge.css"> -->
          
         </head>
@@ -124,11 +120,6 @@
             }  
      
         </script>
-        <br><br>
-        <div style="padding-left: 100px">
-            <button  class="button button_green" type="button">Tipareste</button><br>
-        <!--    <button class="button button_blue" type="button" onclick="alert('Incarca fisier csv sau xml')">Adauga fisier</button>   -->
-        </div>
 
 
         <br><br>
