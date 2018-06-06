@@ -12,6 +12,8 @@
             <meta name='apple-mobile-web-app-capable' content='yes'/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="../css/badge.css">
+            <!-- <link rel="stylesheet" href="../css/badge.css"> -->
+         
         </head>
         <body>
 
@@ -25,33 +27,34 @@
         $image    = $_REQUEST['imageToUpload'];
         $url    =   $_REQUEST['url'];
        // $handle = fopen($_FILES["imageToUpload"]["tmp_name"], 'r');
-/*
-        echo ("<br>Color: " . $image);
 
-        echo ("<br>name: " . $name);
-        echo ("<br>role: " . $role);
-        echo ("<br>affiliation: " . $affiliation);
-        echo ("<br>template: " . $template);
+       // echo ("<br>Color: " . $image);
+
+        echo ("<br>Name: " . $name);
+        echo ("<br>Role: " . $role);
+        echo ("<br>Affiliation: " . $affiliation);
+        echo ("<br>Template: " . $template);
         echo ("<br>Color: " . $culoare);
-
-*/
 
 
         ?>
-        <canvas id="myCanvas" width="340" height="240" style="border:1px solid #000000;">
+        <canvas id="cnvs" width="340" height="240" style="border:1px solid #000000;">
             Your browser does not support the canvas element.
         </canvas>
         <div style="display:none;">
-        <img id="source" src="<?php echo("../image/".$image)?>" alt="photo" height="240" width="200">
+        img id="source" src="<?php echo("../image/".$image)?>" alt="photo" height="240" width="200"
+        <!-- <img id="source" src="../image/temp03.jpg" alt="photo" height="240" width="200"> -->
         </div>
         <br><br><br>
         <script>
 
             window.onload = function() {
 
-                var c = document.getElementById("myCanvas");
-                var ctx = c.getContext("2d");
+                var cv = document.getElementById("cnvs");
+                var ctx = cv.getContext("2d");
                 var img = document.getElementById("source");
+                ctx.fillStyle = "white";
+			    ctx.fillRect (0, 0, 340, 240);
                 switch ("<?php echo($template)?>")
                 {
                     case "1":
@@ -91,9 +94,35 @@
 
                         default:
                         window.location.href="eroare.php";
-                }
+                }    
+                
+                // img.addEventListener('contextmenu', function (e) {
+                //     alert("Ceva listner !");
+                // var dataURL = cv.toDataURL('image/png');
+                //         img.src = dataURL;
+                //     });
 
-            }
+                // var button1 = document.getElementById('btn-download');
+                //     Converts canvas to an image
+                //     function convertCanvasToImage(canvas) {
+	            //         var image = new Image();
+	            //         image.src = canvas.toDataURL("image/png");
+	            //             return image;
+                //         }
+
+
+
+
+                //         button1.addEventListener('click', function (e) {
+                //       alert("In button");
+                // var dataURL = cv.toDataURL('c:\Temp');
+                //         button1.href = dataURL;  
+                //      });                
+                
+                // Converts canvas to an image                  
+            
+            }  
+     
         </script>
         <br><br>
         <div style="padding-left: 100px">
@@ -102,5 +131,39 @@
         </div>
 
 
+        <br><br>
+        <div style="padding-left: 100px">
+            <button onclick="convertCanvasToImage()" >Salveaza PNG</button>
+            <br>
+        </div>       
+        
+        <form method="post" accept-charset="utf-8" name="form1">
+            <input name="hidden_data" id='hidden_data' type="hidden"/>
+        </form>
+        
+        <script>
+              function convertCanvasToImage() {
+                var canvas = document.getElementById("cnvs");
+                var dataURL = canvas.toDataURL("image/png");
+                document.getElementById('hidden_data').value = dataURL;
+                var fd = new FormData(document.forms["form1"]);
+ 
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'imagine.php', true);
+ 
+                xhr.upload.onprogress = function(e) {
+                    if (e.lengthComputable) {
+                        var percentComplete = (e.loaded / e.total) * 100;
+                        console.log(percentComplete + '% salvat');
+                        alert('Salvat cu succes');
+                    }
+                };
+ 
+                xhr.onload = function() {
+ 
+                };
+                xhr.send(fd);
+            };
+        </script>
         </body>
         </html>
