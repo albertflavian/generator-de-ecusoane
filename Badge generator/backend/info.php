@@ -8,6 +8,7 @@
             <meta http-equiv='Content-Type' content='text/html; charset=utf8'/>
             <meta name='apple-mobile-web-app-capable' content='yes'/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="https://sslcdn.proz.com/images/32_profile_placeholder.png"> 
             <!-- <link rel="stylesheet" href="../css/badge.css"> -->
          
         </head>
@@ -124,7 +125,7 @@
 
         <br><br>
         <div style="padding-left: 100px">
-            <button onclick="convertCanvasToImage()" >Salveaza PNG</button>
+            <button class="button button_green" type="button" onclick="convertCanvasToImage()"  >Salveaza PNG</button>
             <br>
         </div>       
         
