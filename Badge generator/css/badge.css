@@ -2,14 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-  max-width:  80%;
-  margin: auto;
-  display: flex;
-  min-height: 100vh;
-
-}
-
 input[type=text] {
     padding:5px;
     border:2px solid #ccc;
