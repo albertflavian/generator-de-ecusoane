@@ -93,31 +93,7 @@
                         window.location.href="eroare.php";
                 }    
                 
-                // img.addEventListener('contextmenu', function (e) {
-                //     alert("Ceva listner !");
-                // var dataURL = cv.toDataURL('image/png');
-                //         img.src = dataURL;
-                //     });
 
-                // var button1 = document.getElementById('btn-download');
-                //     Converts canvas to an image
-                //     function convertCanvasToImage(canvas) {
-	            //         var image = new Image();
-	            //         image.src = canvas.toDataURL("image/png");
-	            //             return image;
-                //         }
-
-
-
-
-                //         button1.addEventListener('click', function (e) {
-                //       alert("In button");
-                // var dataURL = cv.toDataURL('c:\Temp');
-                //         button1.href = dataURL;  
-                //      });                
-                
-                // Converts canvas to an image                  
-            
             }  
      
         </script>

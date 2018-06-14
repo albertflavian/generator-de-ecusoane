@@ -2,6 +2,8 @@
 
 <?php
     session_start();
+    $template=$_POST['template'];
+    $_SESSION['template']= $template;
     if(isset($_POST['submit'])) //submit ?
     {
         $file = $_FILES['fileToUpload'];
@@ -39,20 +41,24 @@
                 }
                 else
                 {
-                    $_SESSION['Error'] = "your file is too big!";
-                    header("Location: ../frontend/info.html");
+
+                    $uploadErr = "your file is too big!";
+                    $_SESSION['uploadErr'] = $uploadErr;
+                    header("Location: ../backend/uploadError.php");
                 }
             }
             else
             {
-                $_SESSION['Error'] =  "There was an error uploading your file!";
-                header("Location: ../frontend/info.html");
+                $uploadErr = "There was an error uploading your file!";
+                $_SESSION['uploadErr'] = $uploadErr;
+                header("Location: ../backend/uploadError.php");
             }
         }
         else
         {
-            $_SESSION['Error'] = "You cannot upload this file format!";
-            header("Location: ../frontend/info.html");
+            $uploadErr = "You cannot upload this file format!";
+            $_SESSION['uploadErr'] = $uploadErr;
+            header("Location: ../backend/uploadError.php");
         }
 
     }

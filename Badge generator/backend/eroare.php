@@ -18,8 +18,8 @@
 	
 	<script>
 	setTimeout(function(){  
-		window.location.replace("../frontend/templates.html");
-		window.location.href = "../frontend/templates.html";
+		window.location.replace("../frontend/templates.php");
+		window.location.href = "../frontend/templates.php";
 	}, 5000);
 	</script>
 	<h1><span>Nu ai ales nici o variantă!</span></h1>
