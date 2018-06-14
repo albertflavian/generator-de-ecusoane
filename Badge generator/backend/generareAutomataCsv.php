@@ -1,50 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Badge Generator</title>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-    <meta http-equiv='Content-Type' content='text/html; charset=utf8'/>
-    <meta name='apple-mobile-web-app-capable' content='yes'/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://sslcdn.proz.com/images/32_profile_placeholder.png">
-    <!-- <link rel="stylesheet" href="../css/badge.css"> -->
-
-</head>
 <?php
-session_start();
-        $template = $_SESSION['template'];
-        $filePath = $_SESSION['filePath'];
-        $xml = simplexml_load_file("$filePath") or die("Error: Cannot create object");
+    session_start();
+   //print_r($_SESSION);
 
-        //print_r($_SESSION);
+$filePath = $_SESSION['filePath'];
+$template = $_SESSION['template'];
 
-
-//print_r ($xml->badge[2]->name);
 $index = 0;
-foreach ($xml->badge as $data)
-{
+$row = 1;
+if (($file = fopen($filePath, "r")) !== FALSE) {
+    while (($data = fgetcsv($file, 100, ";")) !== FALSE) {
+        $num = count($data);
+        $row++;
+    }
+    fclose($file);
+}
+$csv = array_map('str_getcsv', file($filePath));    //array with all lines from csv file
 
-    $Nume = $data->nume;
-    $Afiliere = $data->afiliere;
-    $Rol = $data->rol;
+//print_r($csv);
+//echo ("<hr><br>Arrays: <br>");
+for($i=0; $i < count($csv); ++$i)
+{
+    $arr = explode(";",implode(" ",$csv[$i]));
+    $Nume =$arr[0];
+    $Afiliere = $arr[1];
+    $Rol = $arr[2];
 
     echo ('<canvas id="cnvs');
     echo $index;
     echo('" width="340" height="240" style="border:1px solid #000000;">');
     echo(' Your browser does not support the canvas element. </canvas> ');
-   // echo('generator("cnvs'); echo($index); echo('");');
-    echo '<script type="text/javascript">',
-    'generator("cnvs',$index,'");',
-    '</script>'
-    ;
-    echo ("<br>"); echo ("<br>");
+    // echo('generator("cnvs'); echo($index); echo('");');
 
 
+    ?>
 
-?>
-
-<script>
+    <script>
 
 
         var cv = document.getElementById("cnvs<?php echo $index; ?>");
@@ -94,7 +84,7 @@ foreach ($xml->badge as $data)
 
 
 
-</script>
+    </script>
 
 
 
@@ -127,19 +117,19 @@ foreach ($xml->badge as $data)
         })();
     </script>
 
-<?php
+    <?php
 
     ++$index;
 }
 
 ?>
 
-
 <form action="download.php">
     <input type="submit" name="Submit" value="Download Zip">
     <input type="submit" value="Home" formaction="deleteData.php">
 </form>
 
-</body>
 
-</html>
+<?php
+
+?>

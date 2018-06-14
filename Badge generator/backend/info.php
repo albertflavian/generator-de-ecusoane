@@ -9,7 +9,7 @@
             <meta name='apple-mobile-web-app-capable' content='yes'/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" href="https://sslcdn.proz.com/images/32_profile_placeholder.png"> 
-            <!-- <link rel="stylesheet" href="../css/badge.css"> -->
+             <link rel="stylesheet" href="../css/style.css"> 
          
         </head>
         <body>
@@ -65,7 +65,7 @@
                         ctx.font = "25px Arial";
                         ctx.fillText("<?php echo($role)?>",140,110);
                         ctx.font = "25px Arial";
-                        ctx.fillText("<?php echo($url)?>",140,140);
+                        ctx.fillText("<?php echo($url)?>",20,140);
                         //ctx.drawImage(img, 33, 71, 104, 124, 21, 20, 87, 104);
                         ctx.drawImage(img, 15, 15, 100, 100);
                         break;
@@ -80,13 +80,24 @@
                         ctx.font = "20px Arial";
                         ctx.fillText("<?php echo($role)?>",20,120);
                         ctx.font = "25px Arial";
-                        ctx.fillText("<?php echo($url)?>",140,150);
+                        ctx.fillText("<?php echo($url)?>",20,150);
                         //ctx.drawImage(img, 33, 71, 104, 124, 221, 20, 87, 104);
                         ctx.drawImage(img,210,20,104,124);
                         break;
                     case "3":
                         ctx.fillStyle = "<?php echo($culoare)?>";
-                        ctx.fillRect(100, 0, 340, 240);
+                        ctx.fillRect(0, 0, 340, 240);
+                        ctx.fillStyle = "#000000";
+                        ctx.font = "25px Arial";
+                        ctx.fillText("<?php echo($name)?>",20,60);
+                        ctx.font = "25px Arial";
+                        ctx.fillText("<?php echo($affiliation)?>",20,90);
+                        ctx.font = "20px Arial";
+                        ctx.fillText("<?php echo($role)?>",20,120);
+                        ctx.font = "25px Arial";
+                        ctx.fillText("<?php echo($url)?>",20,150);
+                        //ctx.drawImage(img, 33, 71, 104, 124, 221, 20, 87, 104);
+                        ctx.drawImage(img,210,20,104,124);
                         break;
 
                         default:
